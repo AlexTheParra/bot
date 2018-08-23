@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="container" prefHeight="700.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bot.HomeController">
+   <children>
+      <Rectangle fill="#ff7043" height="146.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="750.0" />
+      <JFXButton fx:id="exitButton" alignment="CENTER" layoutX="705.0" layoutY="14.0" mnemonicParsing="false" onMouseEntered="#exitHoverStart" onMouseExited="#exitHoverEnd" onMousePressed="#closeWindowButton" prefHeight="31.0" prefWidth="31.0" ripplerFill="#ffa270" style="-fx-background-color: #c63f17;" text="X" textAlignment="CENTER">
+         <font>
+            <Font name="Microsoft YaHei UI" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="homeButton" alignment="BASELINE_LEFT" layoutX="-9.0" layoutY="115.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="186.0" ripplerFill="#ff7043" style="-fx-background-color: #ffa270;" text="Home" textFill="WHITE">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <font>
+            <Font name="Microsoft YaHei UI" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="tasksButton" alignment="BASELINE_LEFT" layoutX="177.0" layoutY="115.0" mnemonicParsing="false" onMousePressed="#changeToTasks" prefHeight="31.0" prefWidth="186.0" ripplerFill="#ffa270" style="-fx-background-color: #ff7043;" text="Tasks" textFill="WHITE">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+          <font>
+             <Font name="Microsoft YaHei UI" />
+          </font>
+      </JFXButton>
+       <JFXButton fx:id="settingsButton" alignment="BASELINE_RIGHT" layoutX="564.0" layoutY="115.0" mnemonicParsing="false" onMousePressed="#goSettings" prefHeight="31.0" prefWidth="186.0" ripplerFill="#ffa270" style="-fx-background-color: #ff7043;" text="Settings" textFill="WHITE">
+           <padding>
+               <Insets left="20.0" right="20.0" />
+           </padding>
+           <font>
+               <Font name="Microsoft YaHei UI" />
+           </font>
+       </JFXButton>
+      <Label layoutX="14.0" layoutY="29.0" text="Dash IO" textFill="WHITE">
+         <font>
+            <Font name="Microsoft YaHei UI" size="40.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutY="146.0" prefHeight="553.0" prefWidth="750.0">
+         <children>
+            <Label layoutX="14.0" layoutY="76.0" text="0 Tasks Active">
+               <font>
+                  <Font name="Microsoft YaHei UI" size="40.0" />
+               </font>
+            </Label>
+            <Label fx:id="createNewTask" layoutX="14.0" layoutY="124.0" onMouseEntered="#hoverStartTaskCreate" onMouseExited="#hoverEndTaskCreate" onMousePressed="#changeToTasks" text="Go create a new task" textFill="#ff7043">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Microsoft YaHei UI" size="15.0" />
+               </font></Label>
+            <ImageView fitHeight="31.0" fitWidth="29.0" layoutX="283.0" layoutY="87.0" onMousePressed="#changeToTasks" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/baseline_arrow_forward_ios_black_48dp.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

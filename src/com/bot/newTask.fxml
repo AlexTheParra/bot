@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="container" prefHeight="700.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bot.newTaskController">
+    <children>
+        <Rectangle fill="#ff7043" height="146.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="750.0" />
+        <JFXButton fx:id="exitButton" alignment="CENTER" layoutX="705.0" layoutY="14.0" mnemonicParsing="false" onMouseEntered="#exitHoverStart" onMouseExited="#exitHoverEnd" onMousePressed="#closeWindowButton" prefHeight="31.0" prefWidth="31.0" ripplerFill="#ffa270" style="-fx-background-color: #c63f17;" text="X" textAlignment="CENTER">
+            <font>
+                <Font name="Microsoft YaHei UI" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <Label layoutX="45.0" layoutY="29.0" text="Create New Task" textFill="WHITE">
+            <font>
+                <Font size="40.0" />
+            </font>
+        </Label>
+        <AnchorPane layoutY="146.0" prefHeight="553.0" prefWidth="750.0">
+         <children>
+            <JFXTextField fx:id="productTags" focusColor="#ff7043" layoutX="28.0" layoutY="50.0" prefHeight="31.0" prefWidth="325.0" promptText="Product Tags" />
+            <JFXDatePicker fx:id="datePicker" defaultColor="#ff7043" layoutX="30.0" layoutY="219.0" promptText="Start Date" />
+            <JFXTimePicker fx:id="timePicker" defaultColor="#ff7043" layoutX="536.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0" promptText="Start Time" />
+            <JFXRadioButton layoutX="30.0" layoutY="104.0" mnemonicParsing="false" selected="true" text="Small">
+               <toggleGroup>
+                  <ToggleGroup fx:id="size" />
+               </toggleGroup>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="30.0" layoutY="128.0" mnemonicParsing="false" text="Medium" toggleGroup="$size">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="30.0" layoutY="152.0" mnemonicParsing="false" text="Large" toggleGroup="$size">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXRadioButton>
+            <JFXRadioButton contentDisplay="RIGHT" layoutX="30.0" layoutY="176.0" mnemonicParsing="false" text="Extra Large" toggleGroup="$size">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXRadioButton>
+            <JFXButton fx:id="createTask" onMousePressed="#makeTask" buttonType="RAISED" layoutX="542.0" layoutY="473.0" mnemonicParsing="false" style="-fx-background-color: #ff7043;" text="CREATE TASK" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Microsoft YaHei UI" size="24.0" />
+               </font>
+            </JFXButton>
+         </children>
+        </AnchorPane>
+      <ImageView fx:id="backButton" fitHeight="43.0" fitWidth="40.0" layoutX="14.0" layoutY="38.0" onMousePressed="#backButtonPressed" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/baseline_arrow_back_ios_white_48dp.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+    </children>
+</AnchorPane>
