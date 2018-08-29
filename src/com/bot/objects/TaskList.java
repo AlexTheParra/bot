@@ -19,4 +19,17 @@ public class TaskList {
     public void setTaskList(List<Task> taskList) {
         this.taskList = taskList;
     }
+
+    public void addToTaskList(List<Task> taskList) {
+        int lastI = this.taskList.size();
+        Integer lastID = 0;
+        if (lastI != 0) {
+            lastID = this.taskList.get(lastI - 1).getId();
+        }
+        for (Task t : taskList) {
+            lastID = lastID + 1;
+            t.setId(lastID);
+            this.taskList.add(t);
+        }
+    }
 }
